@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stok Barang</title>
+    <link rel="stylesheet" type="text/css" href="css.css">
+</head>
+<body>
+    <div class="header">
+        <h1>TOFAN <span>MOTOR</span></h1>
+    </div>
+    <div class="container">
+        <div class="side">
+            <ul>
+                <li><a href="beranda.html" id="beranda">Beranda</a></li>
+                <li>
+                    <button class="accordion">Master Data</button>
+                    <div class="panel">
+                        <a href="data-barang.html">Data Barang</a>
+                        <a href="data-supplier.html">Data Supplier</a>
+                    </div>
+                </li>
+                <li>
+                    <button class="accordion">Transaksi Data</button>
+                    <div class="panel">
+                        <a href="INPT MSK.html">Data Barang Masuk</a>
+                        <a href="INPT BARU.html">Data Barang Keluar</a>
+                    </div>
+                </li>
+                <li>
+                    <button class="accordion">Laporan</button>
+                    <div class="panel">
+                        <a href="LAP BRNG MSK.html">Barang Masuk</a>
+                        <a href="LAP BRNG KEL.html">Barang Keluar</a>
+                        <a href="stok-barang.html">Data Stok Barang</a>
+                    </div>
+                </li>
+                <li><a href="login.html" id="beranda">Logout</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <h2 id="pendek">STOK BARANG</h2>
+            <a href="tambah-barang.html">
+            <button id="btl">Tambah Barang</button>
+            </a>
+            <a href="stok-barang.html">
+            <button id="btl">Cetak Lapran Stok Barang</button>
+            </a>
+            <table id="beranda">
+                <tr>
+                    <td colspan="5" id="Search">
+                        Show
+                        <select>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                        entries
+                    </td>
+                    <td colspan="2" id="Search2">
+                        Search:
+                        <input id="Search" type="Search" name="Search" placeholder="Cari Disini...">
+                    </td>
+                </tr>
+                <tr>
+                    <th>Kode Barang</th>
+                    <th width="200px">Nama Barang</th>
+                    <th width="200px">Supplier</th>
+                    <th width="150px">Harga</th>
+                    <th>Satuan</th>
+                    <th>Stok</th>
+                    <th>Keterangan</th>
+                </tr>
+                <tr>
+                    <td>TES</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>TES</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>TES</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="footer"></div>
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].onclick = function(){
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+            panel.style.display = "none";
+            } else {
+            panel.style.display = "block";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TOFAN MOTOR</title>
+	<link rel="stylesheet" type="text/css" href="css.css">
+</head>
+<body>
+	<div class="header">
+		<h1>TOFAN <span>MOTOR</span></h1>
+	</div>
+	<div class="container">
+		<div class="side">
+			<ul>
+				<li><a href="beranda.html" id="beranda">Beranda</a></li>
+				<li>
+					<button class="accordion">Master Data</button>
+                    <div class="panel">
+                        <a href="data-barang.html">Data Barang</a>
+                        <a href="data-supplier.html">Data Supplier</a>
+                    </div>
+                </li>
+                <li>
+                    <button class="accordion">Transaksi Data</button>
+                    <div class="panel">
+                        <a href="INPT MSK.html">Data Barang Masuk</a>
+                        <a href="INPT BARU.html">Data Barang Keluar</a>
+                    </div>
+                </li>
+                <li>
+                    <button class="accordion">Laporan</button>
+                    <div class="panel">
+                        <a href="LAP BRNG MSK.html">Barang Masuk</a>
+                        <a href="LAP BRNG KEL.html">Barang Keluar</a>
+                        <a href="stok-barang.html">Data Stok Barang</a>
+                    </div>
+                </li>
+                <li><a href="login.html" id="beranda">Logout</a></li>
+			</ul>
+		</div>
+		<div class="content">
+			<h2 id="pendek">TAMBAH SUPPLIER</h2>
+			<table>
+				<tr>
+					<td width="20%">Kode Supplier</td>
+					<td>
+						<input id="tmbhsup" type="text" name="tmbhsup">
+					</td>
+				</tr>
+				<tr>
+					<td>Nama Supplier</td>
+					<td>
+						<input id="tmbhsup" type="text" name="tmbhsup">
+					</td>
+				</tr>
+				<tr>
+					<td>No Rekening</td>
+					<td>
+						<input id="tmbhsup" type="text" name="tmbhsup">
+					</td>
+				</tr>
+				<tr>
+					<td>No. Telp/HP</td>
+					<td>
+						<input id="tmbhsup" type="text" name="tmbhsup">
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2"><button id="btl">Batal</button><button>Simpan</button></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<div class="footer"></div>
+	<script>
+		var acc = document.getElementsByClassName("accordion");
+		var i;
+
+		for (i = 0; i < acc.length; i++) {
+    		acc[i].onclick = function(){
+        	this.classList.toggle("active");
+        	var panel = this.nextElementSibling;
+        	if (panel.style.display === "block") {
+            panel.style.display = "none";
+        	} else {
+            panel.style.display = "block";
+        		}
+    		}
+		}
+	</script>
+</body>
+</html>
