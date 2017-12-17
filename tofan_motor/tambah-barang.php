@@ -12,10 +12,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Beranda</title>
-
+    <title>Tambah Barang</title>
+    <script type="text/javascript" src="datatables/media/js/jquery.js"></script>
+    <script type="text/javascript" src="datatables/media/js/jquery.dataTables.js"></script>
+    <link rel="stylesheet" type="text/css" href="datatables/media/css/jquery.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="datatables/media/css/dataTables.bootstrap.css">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <script type="text/javascript">
+        function goBack(){
+            window.history.back();
+        }
+    </script>
+    <script src="js/bootstrap.min.js"></script>
   </head>
   <body>
     <div class="container-fluid">
@@ -64,9 +73,7 @@
                     <div class="panel-heading">
                         <h4 class="panel-title">
                             <a data-toggle="collapse" data-parent="#accordion" ><span class="glyphicon glyphicon-list-alt">
-                            </span>
-                            <a href="barang_keluar.php"> 
-                           Data Barang Keluar</a>
+                            </span><a href="barang_keluar.php">Data Barang Keluar</a>
                         </h4>
                     </div>
                 </div>
@@ -87,7 +94,7 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <span class="glyphicon glyphicon-tasks"></span><a href="stok-barang.php">Data Stok Barang</a>
+                                        <span class="glyphicon glyphicon-tasks"></span><a href="laporan_stok_barang.php">Data Stok Barang</a>
                                     </td>
                                 </tr>
                             </table>
@@ -97,10 +104,16 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion"><span class="glyphicon glyphicon-home">
+                            </span><a href="grafik.php">Perkembangan</a>
+                        </h4>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
                             <a data-toggle="collapse" data-parent="#accordion" ><span class="glyphicon glyphicon-off">
-                            </span>
-                            <a href="logout.php"> 
-                           Logout</a>
+                            </span><a href="logout.php">Logout</a>
                         </h4>
                     </div>
                 </div>
@@ -110,12 +123,28 @@
             <div class="well">
             <h2 class="judul">TAMBAH BARANG BARU</h2>
             <form action="simpan-barang.php" method="POST" enctype="multipart/form-data">
+                       <div class="row">
+                    <div class="col-md-2">
                         Kode Barang
-                        <input type="text" class="text" name="kode_barang"><br>
+                    </div>
+                    <div class="col-md-10 inpt">
+                        <input type="text" class="text" name="kode_barang">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
                         Nama Barang
-                        <input type="text" class="text" name="nama_barang"><br>
-                Nama Supplier :</td>    
-                    <select name="supplier">
+                    </div>
+                    <div class="col-md-10 inpt">
+                        <input type="text" class="text" name="nama_barang">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
+                        Nama Supplier
+                    </div>
+                    <div class="col-md-10 inpt">
+                        <select name="supplier">
                          <?php
                         include "koneksi.php";
                         $query = "select * from data_supplier";
@@ -125,17 +154,42 @@
                             echo "<option value=".$qtabel['nama_supplier'].">".$qtabel['nama_supplier']." </option>";
                         }
                         ?>
-                    </select><br>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
                         Harga
-                        <input type="text" class="text" name="harga"><br>
+                    </div>
+                    <div class="col-md-10 inpt">
+                        <input type="text" class="text" name="harga">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
                         Satuan
-                        <input type="text" class="text" name="satuan"><br>
+                    </div>
+                    <div class="col-md-10 inpt">
+                        <input type="text" class="text" name="satuan">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
                         Stok
-                        <input type="text" class="text" name="stok"><br>
+                    </div>
+                    <div class="col-md-10 inpt">
+                        <input type="text" class="text" name="stok">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
                         Keterangan
+                    </div>
+                    <div class="col-md-10 inpt">
                         <input type="text" class="text" name="keterangan">
-                        <br>
-                <input onclick="goBack()" value="Batal" class="btn btn-warning"></input>
+                    </div>
+                </div>  
+                <a onclick="goBack()" class="btn btn-warning">Batal</a>
                 <input type="submit" value="Simpan" class="btn btn-warning"></input>
             </form>
                 </tr>
@@ -145,12 +199,5 @@
         </div>
     </div>
 </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script>
-    function goBack() {
-    window.history.back();
-    }
-    </script>
   </body>
 </html>

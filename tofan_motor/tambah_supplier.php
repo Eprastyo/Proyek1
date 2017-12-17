@@ -12,10 +12,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Beranda</title>
-
+    <title>Tambah Supplier</title>
+    <script type="text/javascript" src="datatables/media/js/jquery.js"></script>
+    <script type="text/javascript" src="datatables/media/js/jquery.dataTables.js"></script>
+    <link rel="stylesheet" type="text/css" href="datatables/media/css/jquery.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="datatables/media/css/dataTables.bootstrap.css">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+        <script type="text/javascript">
+        function goBack(){
+            window.history.back();
+        }
+    </script>
+    <script src="js/bootstrap.min.js"></script>
   </head>
   <body>
     <div class="container-fluid">
@@ -64,9 +73,7 @@
                     <div class="panel-heading">
                         <h4 class="panel-title">
                             <a data-toggle="collapse" data-parent="#accordion" ><span class="glyphicon glyphicon-list-alt">
-                            </span>
-                            <a href="barang_keluar.php"> 
-                           Data Barang Keluar</a>
+                            </span><a href="barang_keluar.php">Data Barang Keluar</a>
                         </h4>
                     </div>
                 </div>
@@ -87,7 +94,7 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <span class="glyphicon glyphicon-tasks"></span><a href="stok-barang.php">Data Stok Barang</a>
+                                        <span class="glyphicon glyphicon-tasks"></span><a href="laporan_stok_barang.php">Data Stok Barang</a>
                                     </td>
                                 </tr>
                             </table>
@@ -97,10 +104,16 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion"><span class="glyphicon glyphicon-home">
+                            </span><a href="grafik.php">Perkembangan</a>
+                        </h4>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
                             <a data-toggle="collapse" data-parent="#accordion" ><span class="glyphicon glyphicon-off">
-                            </span>
-                            <a href="logout.php"> 
-                           Logout</a>
+                            </span><a href="logout.php">Logout</a>
                         </h4>
                     </div>
                 </div>
@@ -110,12 +123,31 @@
             <div class="well">
             <h2 class="judul">TAMBAH SUPPLIER</h2>
 			<form action="simpan-supplier.php" method="POST" enctype="multipart/form-data">
-				Kode Supplier
-				<input type="text" name="kode_supplier"><br>
-				Nama Supplier						
-				<input type="text" name="nama_supplier"><br>
-				No. Telp/HP
-				<input type="text" name="kontak"><br>
+				<div class="row">
+                    <div class="col-md-2">
+                        Kode Supplier
+                    </div>
+                    <div class="col-md-10 inpt">
+                        <input type="text" name="kode_supplier">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
+                        Nama Supplier
+                    </div>
+                    <div class="col-md-10 inpt">
+                        <input type="text" name="nama_supplier">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
+                        No. Telp/HP
+                    </div>
+                    <div class="col-md-10 inpt">
+                        <input type="text" name="kontak"><br>
+                    </div>
+                </div>
+            <a onclick="goBack()" class="btn btn-warning">Batal</a>
 			<input type="submit" value="simpan" class="btn btn-warning">
 			</form>
                 </tr>
@@ -125,7 +157,5 @@
         </div>
     </div>
 </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
   </body>
 </html>

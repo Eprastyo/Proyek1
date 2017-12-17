@@ -72,9 +72,7 @@
                     <div class="panel-heading">
                         <h4 class="panel-title">
                             <a data-toggle="collapse" data-parent="#accordion" ><span class="glyphicon glyphicon-list-alt">
-                            </span>
-                            <a href="barang_keluar.php"> 
-                           Data Barang Keluar</a>
+                            </span><a href="barang_keluar.php">Data Barang Keluar</a>
                         </h4>
                     </div>
                 </div>
@@ -114,9 +112,7 @@
                     <div class="panel-heading">
                         <h4 class="panel-title">
                             <a data-toggle="collapse" data-parent="#accordion" ><span class="glyphicon glyphicon-off">
-                            </span>
-                            <a href="logout.php"> 
-                           Logout</a>
+                            </span><a href="logout.php">Logout</a>
                         </h4>
                     </div>
                 </div>

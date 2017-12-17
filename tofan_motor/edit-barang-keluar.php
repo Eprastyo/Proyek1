@@ -1,4 +1,4 @@
-<?php
+ <?php
         session_start();
         if (empty($_SESSION['username']))
                 {
@@ -8,66 +8,151 @@
 <?php
        include 'koneksi.php';
 ?>
-<html>
-<head>
-    <title>TOFAN MOTOR</title>
-    <link rel="stylesheet" type="text/css" href="css.css">
-</head>
-<body> 
-       <?php
-       $data_edit = mysqli_query($konek,"SELECT * FROM data_barang_keluar WHERE nama_barang='".$_GET['nama_barang']."'");
-       $row       = mysqli_fetch_array($data_edit);
-       ?> 
-    <div class="header">
-        <h1>TOFAN <span>MOTOR</span></h1>
-    </div>
-    <div class="container">
-        <div class="side">
-           <ul>
-                <li><a href="beranda.php">Beranda</a></li>
-                <li>
-                    <button class="accordion">Master Data</button>
-                    <div class="panel">
-                        <a href="data-barang.php">Data Barang</a>
-                        <a href="data-supplier.php">Data Supplier</a>
-                    </div>
-                </li>
-                <li>
-                    <button class="accordion">Transaksi Data</button>
-                    <div class="panel">
-                        <a href="INPT BARU.php">Data Barang Keluar</a>
-                    </div>
-                </li>
-                <li>
-                    <button class="accordion">Laporan</button>
-                    <div class="panel">
-                        <a href="LAP BRNG KEL.php">Barang Keluar</a>
-                        <a href="stok-barang.php">Data Stok Barang</a>
-                    </div>
-                </li>
-                <li><a href="logout.php">Logout</a></li>
-            </ul>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Edit Barang Keluar</title>
+    <script type="text/javascript" src="datatables/media/js/jquery.js"></script>
+    <script type="text/javascript" src="datatables/media/js/jquery.dataTables.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+        <script type="text/javascript">
+        function goBack(){
+            window.history.back();
+        }
+    </script>
+    <script src="js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+        <div class="page-header">
+            <h1>TOFAN <span>MOTOR</span></h1>
         </div>
-        <div class="content">
-            <h2 id="pendek">EDIT BARANG KELUAR</h2>
+    </div>
+
+    <div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 col-md-3">
+            <div class="panel-group" id="accordion">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion"><span class="glyphicon glyphicon-home">
+                            </span><a href="beranda.php">Beranda</a>
+                        </h4>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"><span class="glyphicon glyphicon-th">
+                            </span>Master Data</a>
+                        </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <table class="table">
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-list-alt"></span><a href="data-barang.php">Data Barang</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-user"></span><a href="data-supplier.php">Data Supplier</a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" ><span class="glyphicon glyphicon-list-alt">
+                            </span><a href="barang_keluar.php">Data Barang Keluar</a>
+                        </h4>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour"><span class="glyphicon glyphicon-file">
+                            </span>Laporan</a>
+                        </h4>
+                    </div>
+                    <div id="collapseFour" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <table class="table">
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-arrow-up"></span><a href="laporan_barang_keluar.php">Barang Keluar</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-tasks"></span><a href="laporan_stok_barang.php">Data Stok Barang</a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion"><span class="glyphicon glyphicon-home">
+                            </span><a href="grafik.php">Perkembangan</a>
+                        </h4>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" ><span class="glyphicon glyphicon-off">
+                            </span><a href="logout.php">Logout</a>
+                        </h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-9 col-md-9">
+            <?php
+               $data_edit = mysqli_query($konek,"SELECT * FROM data_barang_keluar WHERE nama_barang='".$_GET['nama_barang']."'");
+               $row       = mysqli_fetch_array($data_edit);
+            ?> 
+            <div class="well">
+            <h2 class="judul">EDIT BARANG KELUAR</h2>
             <form action="" method="POST" enctype="multipart/form-data">
-                <table class="tabeltambah">
-                <tr>
-                        <td width="250">Nama Barang</td>
-                        <td width="700"><input type="text" class="text" name="nama_barang" value="<?php echo $row['nama_barang']?>" disabled/></input></td>
-                    </tr>
-                    <tr>
-                        <td>Jumlah</td>
-                        <td><input type="text" class="text" name="jumlah" value="<?php echo $row['jumlah'] ?>"></input></td>
-                    </tr>
-                    <tr>
-                        <td>Harga</td>
-                        <td><input type="text" class="text" name="harga" value="<?php echo $row['harga'] ?>"></input></td>
-                    </tr>
-                </table>
-                <br>
-                <input type="reset" value="Batal"></input>
-                <input type="submit" value="Edit" name="edit"></input>
+                <div class="row">
+                    <div class="col-md-2">
+                        Nama Barang
+                    </div>
+                    <div class="col-md-10 inpt">
+                        <input type="text" class="text" name="nama_barang" value="<?php echo $row['nama_barang']?>" disabled/></input>
+                    </div>
+                </div>
+                 <div class="row">
+                    <div class="col-md-2">
+                        Jumlah
+                    </div>
+                    <div class="col-md-10 inpt">
+                        <input type="text" class="text" name="jumlah" value="<?php echo $row['jumlah'] ?>"></input>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
+                        Harga
+                    </div>
+                    <div class="col-md-10 inpt">
+                        <input type="text" class="text" name="harga" value="<?php echo $row['harga'] ?>"></input>
+                    </div>
+                </div>       
+                <a onclick="goBack()" class="btn btn-warning">Batal</a>
+                <input type="submit" value="Simpan" class="btn btn-warning"></input>
             </form>
             <?php
               if(isset($_POST['edit'])){
@@ -85,82 +170,10 @@
                      }
               }
             ?>
+            </div>
+            </div>
         </div>
     </div>
-    <div class="footer"></div>
-    <script>
-        var acc = document.getElementsByClassName("accordion");
-        var i;
-
-        for (i = 0; i < acc.length; i++) {
-            acc[i].onclick = function(){
-            this.classList.toggle("active");
-            var panel = this.nextElementSibling;
-            if (panel.style.display === "block") {
-            panel.style.display = "none";
-            } else {
-            panel.style.display = "block";
-                }
-            }
-        }
-    </script>
-</body>
+</div>
+  </body>
 </html>
-<style type="text/css">
-    .header a.judul{
-        font-size:200%; 
-        color:#fff;
-    }
-    .content{
-        background:white; 
-        min-height:550px; 
-        padding:10px;
-    }
-    .tabeltambah td{
-        padding: 10px;
-        margin: 5px;
-    }
-    .text{
-        width: 700px;
-    }
-    #kiri{
-        width:20%;
-        float:left;
-    }
-    #leftmenu {
-        width:130px;
-        font:bold 12px arial,verdana,sans-serif;
-    }
-    #leftmenu li a {
-        text-decoration:none;
-        border-top:1px solid #ffffff;
-        color:#000000;
-        display:block;
-        background-color:#e0e0e0;
-        padding:10px;
-    }
-    #leftmenu li a:hover {
-        background-color:#f0f0f0;
-    }
-    #leftmenu ul {
-        list-style:none;
-        padding:0px;
-    }
-    #leftmenu ul ul{
-        position:absolute;
-        visibility:hidden;
-    } 
-    #leftmenu ul li:hover ul{
-        visibility:visible;
-        position: absolute;
-    }
-    #kanan{
-        width:80%;
-        float:right;
-    }
-    .footer{
-        background:#333; 
-        padding:10px; 
-        color:#ccc;
-    }
-</style>

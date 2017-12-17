@@ -12,8 +12,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Beranda</title>
-
+    <title>Laporan Barang Keluar</title>
+    <script type="text/javascript" src="datatables/media/js/jquery.js"></script>
+    <script type="text/javascript" src="datatables/media/js/jquery.dataTables.js"></script>
+    <link rel="stylesheet" type="text/css" href="datatables/media/css/jquery.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="datatables/media/css/dataTables.bootstrap.css">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
   </head>
@@ -64,9 +67,7 @@
                     <div class="panel-heading">
                         <h4 class="panel-title">
                             <a data-toggle="collapse" data-parent="#accordion" ><span class="glyphicon glyphicon-list-alt">
-                            </span>
-                            <a href="barang_keluar.php"> 
-                           Data Barang Keluar</a>
+                            </span><a href="barang_keluar.php">Data Barang Keluar</a>
                         </h4>
                     </div>
                 </div>
@@ -97,10 +98,16 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion"><span class="glyphicon glyphicon-home">
+                            </span><a href="grafik.php">Perkembangan</a>
+                        </h4>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
                             <a data-toggle="collapse" data-parent="#accordion" ><span class="glyphicon glyphicon-off">
-                            </span>
-                            <a href="logout.php"> 
-                           Logout</a>
+                            </span><a href="logout.php">Logout</a>
                         </h4>
                     </div>
                 </div>
@@ -117,18 +124,7 @@
 			</label>
 			<input id="lapbrng" type="text" name="brngkel" placeholder="Dari">
 			<input type="text" name="brngkel" placeholder="Ke"><br>
-			<label>
-				<input  id="lapkel" type="radio" name="brngkel">Pencarian Kata</input>
-			</label>
-			<select id="lapkel">
-				<option>Pilih Field</option>
-				<option>Kode Barang</option>
-				<option>Tanggal</option>
-				<option>Supplier</option>
-				<option>Harga</option>
-			</select>
-			<input id="lapbrng type="text" name="bengkel"><br>
-			<a href="lapakhirbarangkeluar.php">
+            <a href="lapakhirbarangkeluar.php">
 			<button class="btn btn-warning">Cetak</button>
 			</a>
             </div>

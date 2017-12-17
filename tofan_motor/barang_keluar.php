@@ -12,7 +12,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Beranda</title>
+    <title>Data Barang Keluar</title>
     <script type="text/javascript" src="datatables/media/js/jquery.js"></script>
     <script type="text/javascript" src="datatables/media/js/jquery.dataTables.js"></script>
     <link rel="stylesheet" type="text/css" href="datatables/media/css/jquery.dataTables.css">
@@ -73,9 +73,7 @@
                     <div class="panel-heading">
                         <h4 class="panel-title">
                             <a data-toggle="collapse" data-parent="#accordion" ><span class="glyphicon glyphicon-list-alt">
-                            </span>
-                            <a href="barang_keluar.php"> 
-                           Data Barang Keluar</a>
+                            </span><a href="barang_keluar.php">Data Barang Keluar</a>
                         </h4>
                     </div>
                 </div>
@@ -106,10 +104,16 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion"><span class="glyphicon glyphicon-home">
+                            </span><a href="grafik.php">Perkembangan</a>
+                        </h4>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
                             <a data-toggle="collapse" data-parent="#accordion" ><span class="glyphicon glyphicon-off">
-                            </span>
-                            <a href="logout.php"> 
-                           Logout</a>
+                            </span><a href="logout.php">Logout</a>
                         </h4>
                     </div>
                 </div>

@@ -12,10 +12,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Beranda</title>
-
+    <title>Input Barang Keluar</title>
+    <script type="text/javascript" src="datatables/media/js/jquery.js"></script>
+    <script type="text/javascript" src="datatables/media/js/jquery.dataTables.js"></script>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+        <script type="text/javascript">
+        function goBack(){
+            window.history.back();
+        }
+    </script>
+    <script src="js/bootstrap.min.js"></script>
   </head>
   <body>
     <div class="container-fluid">
@@ -64,9 +71,7 @@
                     <div class="panel-heading">
                         <h4 class="panel-title">
                             <a data-toggle="collapse" data-parent="#accordion" ><span class="glyphicon glyphicon-list-alt">
-                            </span>
-                            <a href="barang_keluar.php"> 
-                           Data Barang Keluar</a>
+                            </span><a href="barang_keluar.php">Data Barang Keluar</a>
                         </h4>
                     </div>
                 </div>
@@ -87,7 +92,7 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <span class="glyphicon glyphicon-tasks"></span><a href="stok-barang.php">Data Stok Barang</a>
+                                        <span class="glyphicon glyphicon-tasks"></span><a href="laporan_stok_barang.php">Data Stok Barang</a>
                                     </td>
                                 </tr>
                             </table>
@@ -97,10 +102,16 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion"><span class="glyphicon glyphicon-home">
+                            </span><a href="grafik.php">Perkembangan</a>
+                        </h4>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
                             <a data-toggle="collapse" data-parent="#accordion" ><span class="glyphicon glyphicon-off">
-                            </span>
-                            <a href="logout.php"> 
-                           Logout</a>
+                            </span><a href="logout.php">Logout</a>
                         </h4>
                     </div>
                 </div>
@@ -110,28 +121,45 @@
             <div class="well">
             <h2 class="judul">INPUT BARANG KELUAR</h2>
             <form action="simpan_barang_keluar.php" method="POST" enctype="multipart/form-data">
-                        <?php  
-                        include 'koneksi.php'; 
-                        $result = mysqli_query($konek,"select * from data_barang");
-                        $jsArray = "var barang = new Array();\n";
-                        echo 'Nama Barang : <select name="nama_barang" onchange="document.getElementById(\'harga\').value = barang[this.value]">';
-                        echo '<option>--Pilih Nama Barang--</option>';
-                        while ($row = mysqli_fetch_array($result)) {
-                            echo '<option value="' . $row['nama_barang'] . '">' . $row['nama_barang'] . '</option>';
-                            $jsArray .= "barang['" . $row['nama_barang'] . "'] = '" . addslashes($row['harga']) . "';\n";
-                        }
-                        echo '</select>';
-                        ?>
-                        <br />
-                        Harga : <input type="text" name="harga" id="harga"/>
-                        <script type="text/javascript">
-                        <?php echo $jsArray; ?>
-                        </script><br>
+                        <div class="row">
+                        <div class="col-md-2">
+                            Nama Barang
+                        </div>
+                        <div class="col-md-10 inpt">
+                            <?php  
+                            include 'koneksi.php'; 
+                            $result = mysqli_query($konek,"select * from data_barang");
+                            $jsArray = "var barang = new Array();\n";
+                            echo '<select name="nama_barang" onchange="document.getElementById(\'harga\').value = barang[this.value]">';
+                            echo '<option>--Pilih Nama Barang--</option>';
+                            while ($row = mysqli_fetch_array($result)) {
+                                echo '<option value="' . $row['nama_barang'] . '">' . $row['nama_barang'] . '</option>';
+                                $jsArray .= "barang['" . $row['nama_barang'] . "'] = '" . addslashes($row['harga']) . "';\n";
+                            }
+                            echo '</select>';
+                            ?>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2">
+                            Harga
+                        </div>
+                        <div class="col-md-10 inpt">
+                            <input type="text" name="harga" id="harga"/>
+                            <script type="text/javascript">
+                            <?php echo $jsArray; ?>
+                            </script>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2">
                             Jumlah
-                            <input type="text" class="text" name="jumlah"></input>                
-                </table>
-                <br>
-                <input type="reset" value="Batal" class="btn btn-warning">
+                        </div>
+                        <div class="col-md-10 inpt">
+                            <input type="text" class="text" name="jumlah"></input>  
+                        </div>
+                    </div>
+                <a onclick="goBack()" class="btn btn-warning">Batal</a>
                 <input type="submit" value="Simpan" class="btn btn-warning">
                 </form>
             </div>
@@ -139,7 +167,5 @@
         </div>
     </div>
 </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
   </body>
 </html>
