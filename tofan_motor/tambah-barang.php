@@ -15,6 +15,7 @@
     <title>Tambah Barang</title>
     <script type="text/javascript" src="datatables/media/js/jquery.js"></script>
     <script type="text/javascript" src="datatables/media/js/jquery.dataTables.js"></script>
+    
     <link rel="stylesheet" type="text/css" href="datatables/media/css/jquery.dataTables.css">
     <link rel="stylesheet" type="text/css" href="datatables/media/css/dataTables.bootstrap.css">
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -23,6 +24,13 @@
         function goBack(){
             window.history.back();
         }
+    </script>
+    <script type="text/javascript" src="tinymce/tinymce.min.js"></script>
+    <script type="text/javascript">
+    tinyMCE.init({
+    // General options
+    selector : "textarea"
+    });
     </script>
     <script src="js/bootstrap.min.js"></script>
   </head>
@@ -128,7 +136,7 @@
                         Kode Barang
                     </div>
                     <div class="col-md-10 inpt">
-                        <input type="text" class="text" name="kode_barang">
+                        <input type="text" name="kode_barang">
                     </div>
                 </div>
                 <div class="row">
@@ -136,14 +144,14 @@
                         Nama Barang
                     </div>
                     <div class="col-md-10 inpt">
-                        <input type="text" class="text" name="nama_barang">
+                        <input type="text" name="nama_barang">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-2">
                         Nama Supplier
                     </div>
-                    <div class="col-md-10 inpt">
+                    <div class="col-md-3 inpt">
                         <select name="supplier">
                          <?php
                         include "koneksi.php";
@@ -162,7 +170,7 @@
                         Harga
                     </div>
                     <div class="col-md-10 inpt">
-                        <input type="text" class="text" name="harga">
+                        <input type="text" name="harga">
                     </div>
                 </div>
                 <div class="row">
@@ -170,7 +178,7 @@
                         Satuan
                     </div>
                     <div class="col-md-10 inpt">
-                        <input type="text" class="text" name="satuan">
+                        <input type="text" name="satuan">
                     </div>
                 </div>
                 <div class="row">
@@ -178,15 +186,15 @@
                         Stok
                     </div>
                     <div class="col-md-10 inpt">
-                        <input type="text" class="text" name="stok">
+                        <input type="text" name="stok">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-2">
                         Keterangan
                     </div>
-                    <div class="col-md-10 inpt">
-                        <input type="text" class="text" name="keterangan">
+                    <div class="col-md-6 inpt">
+                        <textarea name="keterangan"></textarea>
                     </div>
                 </div>  
                 <a onclick="goBack()" class="btn btn-warning">Batal</a>

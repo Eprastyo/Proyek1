@@ -139,3 +139,8 @@ h5.login{
 .col-md-10.inpt{
   margin-bottom: 5px;
 }
+select{
+  width: 174px;
+  height: 30px;
+  margin-bottom: 5px;
+}
