@@ -41,11 +41,11 @@ h2.judul:before{
 	left    : 0;
 	bottom  : 0;
 	height  : 1px;
-	width   : 200px;
+	width   : 15%;
 	border-bottom:2px solid orange;
 }
 button.btn.btn-warning.atas{
-	margin-top: 15px;
+	margin-top: 5px;
 	margin-bottom: 10px;
 }
 .form-control.tambah{
@@ -109,9 +109,11 @@ input[type="text"] {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
-
-input[type="password"] {
+.form-control.lgn{
   margin-bottom: 20px;
+}
+input[type="password"] {
+  margin-bottom: 0px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
@@ -143,4 +145,11 @@ select{
   width: 174px;
   height: 30px;
   margin-bottom: 5px;
+}
+.imgcaptcha{
+  border-radius: 4px 0 0 4px;
+}
+.tanggal{
+  margin-left: 40px;
+  width: 150px;
 }

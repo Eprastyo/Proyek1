@@ -19,14 +19,20 @@
   <body>
   	<div class = "container">
 	<div class="wrapper">
-		<form method="post" name="login" action="cek_login.php"class="form-signin">       
+		<form method="post" name="login" action="cek_login.php" class="form-signin">       
 		    <h3 class="form-signin-heading">LOGIN</h3>
 			  <hr class="colorgraph"><br>
-			  
 			  <input type="text" class="form-control" name="username" placeholder="username" required="" autofocus="" />
-			  <input type="password" class="form-control" name="password" placeholder="password" required=""/>     		  
-			 
-			  <button class="btn btn-lg btn-primary btn-block"  name="Submit" value="Login" type="submit">Login</button>
+        <input type="password" class="form-control" name="password" placeholder="password" required=""/> 
+        <div class="row">
+        <div class="col-md-3">
+        <img class="imgcaptcha" src="captcha.php" alt="Kode Acak" />
+        </div> 
+        <div class="col-md-9">   
+			  <input type="text" class="form-control lgn" name="captcha"/>
+        </div>
+        </div>
+			  <button class="btn btn-lg btn-primary btn-block" name="Submit" value="Login" type="submit">Login</button>
 			  <h5 class="login"><a href="daftar_user.php">Create account</a> or <a href="#">Reset password</a></h5>  			
 		</form>			
 	</div>

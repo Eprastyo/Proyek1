@@ -1,10 +1,19 @@
 <html>
-<head></head>
+<head>
+<style type="text/css">
+    table{
+        border-collapse: collapse;
+    }
+    table,th,td{
+        padding: 5px;
+    }
+</style>
+</head>
 <body>
 <h1 align="center">TOKO TOFAN MOTOR</h1>
 <h4 align="center">JL.Raya Bangkir no 10 Indramayu</h4>
 <H2>Laporan Barang Keluar</H2>
-<table border="1" align="center" style="border-collapse: collapse;">
+<table border="1" align="center">
     <tr>
     <th>TANGGAL</th>
     <th>NAMA BARANG</th>

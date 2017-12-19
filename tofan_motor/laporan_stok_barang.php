@@ -15,6 +15,10 @@
     <title>Laporan Stok Barang</title>
     <script type="text/javascript" src="datatables/media/js/jquery.js"></script>
     <script type="text/javascript" src="datatables/media/js/jquery.dataTables.js"></script>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="datatables/media/css/jquery.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="datatables/media/css/dataTables.bootstrap.css">
+    <link rel="stylesheet" href="datepicker/css/bootstrap-datepicker3.css"/>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
   </head>
@@ -114,23 +118,33 @@
         <div class="col-sm-9 col-md-9">
             <div class="well">
 			<h2 class="judul">LAPORAN STOK BARANG</h2>
-			<label>
-				<input id="lapkel" type="radio" name="brngkel">Semua Data</input>
-			</label><br>
-			<label>
-				<input  id="lapkel" type="radio" name="brngkel">Tanggal</input>
-			</label>
-			<input id="lapbrng" type="text" name="brngkel" placeholder="Dari">
-			<input type="text" name="brngkel" placeholder="Ke"><br>
-			<a href="lapakhirbarang.php">
-			<button class="btn btn-warning">Cetak</button>
-			</a>
+			<form method="post" action="lapakhirbarang.php">
+            <label>
+                <input id="semua" type="radio" name="laporan" value="semua">Semua Data</input>
+            </label><br>
+            <label>
+                <input  id="tgl" type="radio" name="laporan" value="tgl">Tanggal</input>
+            </label>
+            <form method="post" action="tampil_laporan_stok_barang.php">
+            <input type="text" name="tanggal" id="tanggal" class="tanggal"/><br>
+            <input type="submit" name="submit" class="btn btn-warning">
+            </form>
+            </form>
             </div>
             </div>
         </div>
     </div>
 </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
+    <script src="datepicker/js/bootstrap-datepicker.js"></script>
+    <script type="text/javascript">
+            $(document).ready(function () {
+                $('#tanggal').datepicker({
+                    format: "yyyy-mm-dd",
+                    autoclose:true
+                });
+            });
+    </script>
   </body>
 </html>

@@ -18,12 +18,20 @@
   <body>
   	<div class = "container">
 	<div class="wrapper">
-		<form method="post" name="login" action="simpan-user.php"class="form-signin">       
+		<form method="post" name="login" action="simpan-user.php" class="form-signin">       
 		    <h3 class="form-signin-heading">DAFTAR</h3>
 			  <hr class="colorgraph"><br>
 			  <input type="text" class="form-control" name="nama" placeholder="Nama" required="" />
 			  <input type="text" class="form-control" name="username" placeholder="Username" required="" />
-			  <input type="password" class="form-control" name="password" placeholder="Password" required=""/>     		  
+			  <input type="password" class="form-control" name="password" placeholder="Password" required=""/>
+        <div class="row">
+        <div class="col-md-3">
+        <img class="imgcaptcha" src="captcha.php" alt="Kode Acak" />
+        </div> 
+        <div class="col-md-9">   
+        <input type="text" class="form-control lgn" name="captcha"/>
+        </div>
+        </div>     		  
 			 
 			  <button class="btn btn-lg btn-primary btn-block"  name="Submit" type="submit">Simpan</button>
 			  <h5 class="login"><a href="login.php">Kembali</a></h5>		
