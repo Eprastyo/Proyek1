@@ -1,0 +1,123 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>.:: Data Barang ::.</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/css_kita.css">
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <a class="judul">TOFAN MOTOR</a>
+    </div>
+    <div class="content">
+        <div id="kiri">
+            <div id="leftmenu">
+                <ul>
+                    <li><a href="#">BERANDA</a></li>
+                    <li><a href="#">MASTER DATA</a>
+                <ul>
+                    <li><a href="#">Data Barang</a></li>
+                    <li><a href="#">Data SUpplier</a></li>
+                </ul>
+            </li>
+                    <li><a href="#">TRANSAKSI DATA</a>
+                <ul>
+                    <li><a href="#">Data Barang Masuk</a></li>
+                    <li><a href="#">Data Barang Keluar</a></li>
+                </ul>
+                    </li>
+                    <li><a href="#">LAPORAN</a>
+                <ul>
+                    <li><a href="#">Barang Masuk </a></li>
+                    <li><a href="#">Barang Keluar</a></li>
+                    <li><a href="">Data Stok Barang</a></li>
+                </ul>
+                    </li>
+                    <li><a href="#">LOGOUT</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="kanan">
+            <form action="">
+            	<p>DATA BARANG BARU</p><br>
+                <input type="submit" value="Tambah Barang"></input>
+            	<input type="submit" value="Cetak Laporan Stok Barang"></input><br>
+            	<br><br>
+                	<table>
+        				<tr>
+        					<td width="120">Kode Barang</td>
+                            <td width="200">Supplier</td>
+        					<td width="300">Nama Barang</td>
+        					<td width="200">Harga</td>
+        					<td width="200">Satuan</td>
+                            <td width="200">Aksi</td>
+        				</tr>
+        			</table>
+        </div>
+    </div>
+    <div class="footer">
+        &copy; 2017. Designed by POLINDRA
+    </div>
+</div>
+</body>
+</html>
+<style type="text/css">
+    .header{
+        background:#555; 
+        padding:20px;
+    }
+    .header a.judul{
+        font-size:200%; 
+        color:#fff;
+    }
+    .content{
+        background:#ddd; 
+        min-height:550px; 
+        padding:10px;
+    }
+    .search{
+    	float: right;
+    }
+    #kiri{
+        width:20%;
+        float:left;
+    }
+    #leftmenu {
+        width:130px;
+        font:bold 12px arial,verdana,sans-serif;
+    }
+    #leftmenu li a {
+        text-decoration:none;
+        border-top:1px solid #ffffff;
+        color:#000000;
+        display:block;
+        background-color:#e0e0e0;
+        padding:10px;
+    }
+    #leftmenu li a:hover {
+        background-color:#f0f0f0;
+    }
+    #leftmenu ul {
+        list-style:none;
+        padding:0px;
+    }
+    #leftmenu ul ul{
+        position:absolute;
+        visibility:hidden;
+    } 
+    #leftmenu ul li:hover ul{
+        visibility:visible;
+        left: 135px;
+        position: absolute;
+    }
+    #kanan{
+        width:80%;
+        float:right;
+    }
+    .footer{
+        background:#333; 
+        padding:10px; 
+        color:#ccc;
+    }
+</style>
