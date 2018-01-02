@@ -14,7 +14,7 @@
         if($nama_barang==$data['nama_barang']){
         	mysqli_query($konek,"UPDATE data_barang SET stok=stok+$stok");
         	echo "<script>alert('Data Disimpan')</script>";
-	        echo "<meta http-equiv='refresh' content='1 url=data-barang.php'>"; 
+	        echo "<meta http-equiv='refresh' content='1 url=beranda.php'>"; 
         }
         else if ($kode_barang==''|$nama_barang==''|$harga==''|$satuan==''|$stok==''|$keterangan==''){
         	echo "<script>alert('Harap diisi Semua')</script>";
