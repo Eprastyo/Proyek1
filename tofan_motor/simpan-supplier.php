@@ -6,19 +6,18 @@
 	    $cek = mysqli_num_rows(mysqli_query($konek,"SELECT * FROM data_supplier WHERE kode_supplier='$kode_supplier' or nama_supplier='$nama_supplier'"));
 	    if ($cek > 0){
 		    echo "<script>alert('Kode atau nama sudah ada')</script>";
-	    	echo "<meta http-equiv='refresh' content='1 url=tambah_supplier.php'>";
+	    	echo "<meta http-equiv='refresh' content='1 url=index.php?page=datasupplier&id=15'>";
 		}
 		else{
 				    $input    			="INSERT INTO data_supplier (kode_supplier,nama_supplier,kontak)
 	            			  			VALUES ('$kode_supplier','$nama_supplier','$kontak')";
 				    $query_input 	    = mysqli_query($konek,$input);
-				    if ($query_input) 
-						{
-	    	header('location:data-supplier.php');
-	    }
-	     else {
-	    	echo "<script>alert('Ulangi Data Belum Disimpan')</script>";
-	    	echo "<meta http-equiv='refresh' content='1 url=tambah_supplier.php'>";
-	    }
+				    if ($query_input){
+	    				echo "<meta http-equiv='refresh' content='1 url=index.php?page=datasupplier&id=10'>";
+	   				}
+	     			else {
+	    				echo "<script>alert('Ulangi Data Belum Disimpan')</script>";
+	    				echo "<meta http-equiv='refresh' content='1 url=index.php?page=datasupplier&id=15'>";
+	    			}
 		}
 ?>

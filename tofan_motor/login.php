@@ -33,7 +33,7 @@
         </div>
         </div>
 			  <button class="btn btn-lg btn-primary btn-block" name="Submit" value="Login" type="submit">Login</button>
-			  <h5 class="login"><a href="daftar_user.php">Create account</a> 			
+			  <h5 class="login"><a href="daftar_user.php">Create account</a></h5>  			
 		</form>			
 	</div>
 </div>
