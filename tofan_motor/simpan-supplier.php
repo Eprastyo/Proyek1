@@ -13,6 +13,7 @@
 	            			  			VALUES ('$kode_supplier','$nama_supplier','$kontak')";
 				    $query_input 	    = mysqli_query($konek,$input);
 				    if ($query_input){
+	    				echo "<script>alert('Data Disimpan')</script>";
 	    				echo "<meta http-equiv='refresh' content='1 url=index.php?page=datasupplier&id=10'>";
 	   				}
 	     			else {

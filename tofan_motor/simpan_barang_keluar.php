@@ -19,14 +19,14 @@
 
             if($hasil['stok']=='0'){
         		echo "<script>alert('MAAF STOK BARANG HABIS')</script>";
-        		echo "<meta http-equiv='refresh' content='1 url=input_barang_keluar.php'>"; 
+        		echo "<meta http-equiv='refresh' content='1 url=index.php?page=barangkeluar&id=10'>"; 
         	}
         	else{
         	mysqli_query($konek,"UPDATE data_barang_keluar SET jumlah=jumlah+$jumlah where nama_barang='$nama_barang'");
         	mysqli_query($konek,"UPDATE data_barang_keluar SET total_harga=total_harga+$total where nama_barang='$nama_barang'");
         	mysqli_query($konek,"UPDATE data_barang SET stok=stok-$jumlah where nama_barang='$nama_barang'");
 
-	        header('location:barang_keluar.php');
+	        header('location:index.php?page=barangkeluar&id=10');
         	}	
 	    }
 	    else if($jumlah ==''|| $nama_barang==''||$harga==''){
@@ -39,6 +39,6 @@
 
 	    	mysqli_query($konek,"UPDATE data_barang SET stok=stok-$jumlah where nama_barang='$nama_barang'");
 
-	    	header('location:barang_keluar.php');
+	    	header('location:index.php?page=barangkeluar&id=10');
 		}
 ?>

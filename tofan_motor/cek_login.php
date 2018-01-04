@@ -22,7 +22,8 @@ if (empty($username)){
 	if (mysqli_num_rows($login) > 0){
 		if($_SESSION['kodecap']==$_POST['captcha']){
 			$_SESSION['username'] = $username;
-			header("location:index.php");
+			echo "<script>alert('Selamat Datang $username!')</script>";
+			echo "<meta http-equiv='refresh' content='1 url=index.php'>";
 		}
 		else{
 			echo "<script>alert('Captcha salah')</script>";

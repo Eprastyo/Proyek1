@@ -1,4 +1,5 @@
 <?php
+               include "koneksi.php";
                $data_edit = mysqli_query($konek,"SELECT * FROM data_barang WHERE kode_barang='".$_GET['kode_barang']."'");
                $row       = mysqli_fetch_array($data_edit);
                ?> 
@@ -28,7 +29,6 @@
                     <div class="col-md-3 inpt">
                         <select name="supplier">
                          <?php
-                        include "koneksi.php";
                         $query = "select * from data_supplier";
                         $hasil = mysqli_query($konek,$query);
                         while ($qtabel = mysqli_fetch_assoc($hasil))
@@ -82,7 +82,7 @@
                            echo "<meta http-equiv='refresh' content='1 url=index.php?page=databarang&id=10'>";
 
                      }else{
-                           echo "Data Belum Disimpan";
+                           echo "<script>alert('Data Belum Disimpan')</script>";
                            echo "<meta http-equiv='refresh' content='1 url=index.php?page=databarang&id=10'>";
                      }
               }

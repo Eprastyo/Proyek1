@@ -43,9 +43,11 @@
                     $update = mysqli_query($konek,"UPDATE data_barang_keluar SET jumlah='".$_POST['jumlah']."',harga='".$_POST['harga']."' total_harga=$total WHERE nama_barang='".$_GET['nama_barang']."'");
 
                      if($update){
-                            echo "Data Telah Diupdate";
+                            echo "<script>alert('Data Telah Diupdate')</script>";
+                           echo "<meta http-equiv='refresh' content='1 url=index.php?page=barangkeluar&id=10'>";
                      }else{
-                            echo "Data Belum Disimpan";
+                            echo "<script>alert('Data Belum Disimpan')</script>";
+                           echo "<meta http-equiv='refresh' content='1 url=index.php?page=barangkeluar&id=10'>";
                      }
               }
             ?>
