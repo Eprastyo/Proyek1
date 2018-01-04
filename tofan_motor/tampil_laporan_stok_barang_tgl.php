@@ -2,7 +2,7 @@
 <head></head>
 <body>
 <h1 align="center">TOKO TOFAN MOTOR</h1>
-<h4 align="center">JL.Raya Bangkir no 10 Indramayu</h4>
+<h4 align="center">JL.Raya Arahan Indramayu</h4>
 <table border="1" align="center" style="border-collapse: collapse;">
 	<tr>
 	<th>KODE BARANG</th>

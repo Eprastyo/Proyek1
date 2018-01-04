@@ -11,7 +11,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Grafik</title>
+    <title>Beranda</title>
     <script type="text/javascript" src="datatables/media/js/jquery.js"></script>
     <script type="text/javascript" src="datatables/media/js/jquery.dataTables.js"></script>
     <link rel="stylesheet" type="text/css" href="datatables/media/css/jquery.dataTables.css">
@@ -78,8 +78,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour"><span class="glyphicon glyphicon-file">
-                            </span>Laporan</a>
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour"><span class="glyphicon glyphicon-file"></span>Laporan</a>
                         </h4>
                     </div>
                     <div id="collapseFour" class="panel-collapse collapse">
@@ -103,7 +102,7 @@
                     <div class="panel-heading">
                         <h4 class="panel-title">
                             <a data-toggle="collapse" data-parent="#accordion"><span class="glyphicon glyphicon-equalizer">
-                            </span><a href="grafik.php">Perkembangan</a>
+                            </span><a href="#">Perkembangan</a>
                         </h4>
                     </div>
                 </div>
@@ -137,9 +136,12 @@ include 'koneksi.php';
     $sql = mysqli_query($konek, "SELECT * from data_barang_keluar");
     $nama_brg = array();
     $jml_brg = array();
+    $tanggal = array();
+
     while ($data = mysqli_fetch_array($sql)){
     $nama_brg[]  = $data['nama_barang'];
     $jml_brg[]   = intval($data['jumlah']);
+    $tanggal[]   = $data['tgl_keluar'];
 ?>
 
 <script src="highcharts/highcharts.js"></script>
@@ -158,10 +160,11 @@ include 'koneksi.php';
     xAxis: {
         categories: <?=json_encode($nama_brg);?>,
         tickmarkPlacement: 'on',
-        title: {
+        title: {    
             enabled: false
         }
     },
+    
     yAxis: {
         title: {
             text: 'Jumlah Barang'

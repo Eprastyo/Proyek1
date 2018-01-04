@@ -130,6 +130,7 @@
             <tr>
                 <th>Kode Barang</th>
                 <th>Nama Barang</th>
+                <th>Gambar Barang</th>
                 <th>Supplier</th>
                 <th>Harga</th>
                 <th>Satuan</th>
@@ -142,6 +143,7 @@
             <tr>
                 <th>Kode Barang</th>
                 <th>Nama Barang</th>
+                <th>Gambar Barang</th>
                 <th>Supplier</th>
                 <th>Harga</th>
                 <th>Satuan</th>
@@ -159,6 +161,7 @@
             <tr>
                     <td><?php echo $data['kode_barang'];?></td>
                     <td><?php echo $data['nama_barang'];?></td>
+                    <td><img class="gmbr" src="gambar/<?php echo $data['gambar_barang']; ?>" border="0"/></td>
                     <td><?php echo $data['supplier'];?></td>
                     <td><?php echo $data['harga'];?></td>
                     <td><?php echo $data['satuan'];?></td>

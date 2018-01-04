@@ -153,3 +153,10 @@ select{
   margin-left: 40px;
   width: 150px;
 }
+img.gmbr{
+  width: 80px;
+  height: 80px;
+}
+.btn.btn-warning{
+  margin-bottom: 5px;
+}

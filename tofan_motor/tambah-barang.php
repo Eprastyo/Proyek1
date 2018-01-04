@@ -20,18 +20,20 @@
     <link rel="stylesheet" type="text/css" href="datatables/media/css/dataTables.bootstrap.css">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+
     <script type="text/javascript">
         function goBack(){
             window.history.back();
         }
     </script>
+
     <script type="text/javascript" src="tinymce/tinymce.min.js"></script>
     <script type="text/javascript">
     tinyMCE.init({
-    // General options
     selector : "textarea"
     });
     </script>
+
     <script src="js/bootstrap.min.js"></script>
   </head>
   <body>
@@ -149,6 +151,14 @@
                 </div>
                 <div class="row">
                     <div class="col-md-2">
+                        Gambar Barang
+                    </div>
+                    <div class="col-md-10 inpt">
+                        <input type="file" name="gambar_barang">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
                         Nama Supplier
                     </div>
                     <div class="col-md-3 inpt">
@@ -193,6 +203,7 @@
                     <div class="col-md-2">
                         Keterangan
                     </div>
+                    
                     <div class="col-md-6 inpt">
                         <textarea name="keterangan"></textarea>
                     </div>
@@ -200,8 +211,6 @@
                 <a onclick="goBack()" class="btn btn-warning">Batal</a>
                 <input type="submit" value="Simpan" class="btn btn-warning"></input>
             </form>
-                </tr>
-            </table>
             </div>
             </div>
         </div>

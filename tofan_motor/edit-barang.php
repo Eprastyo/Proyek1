@@ -128,7 +128,7 @@
                ?> 
             <div class="well">
             <h2 class="judul">EDIT BARANG</h2>
-            <form action="simpan-barang.php" method="POST" enctype="multipart/form-data">
+            <form action="" method="POST" enctype="multipart/form-data">
                 <div class="row">
                     <div class="col-md-2">
                         Kode Barang
@@ -149,8 +149,18 @@
                     <div class="col-md-2">
                         Nama Supplier
                     </div>
-                    <div class="col-md-10 inpt">
-                        <input type="text" class="text" name="supplier" value="<?php echo $row['supplier'] ?>"></input>
+                    <div class="col-md-3 inpt">
+                        <select name="supplier">
+                         <?php
+                        include "koneksi.php";
+                        $query = "select * from data_supplier";
+                        $hasil = mysqli_query($konek,$query);
+                        while ($qtabel = mysqli_fetch_assoc($hasil))
+                        { 
+                            echo "<option value=".$qtabel['nama_supplier'].">".$qtabel['nama_supplier']." </option>";
+                        }
+                        ?>
+                        </select>
                     </div>
                 </div>
                 <div class="row">
@@ -186,15 +196,18 @@
                     </div>
                 </div>        
                 <a onclick="goBack()" class="btn btn-warning">Batal</a>
-                <input type="submit" value="Simpan" class="btn btn-warning"></input>
+                <input type="submit" value="Edit" name="edit" class="btn btn-warning"></input>
             </form>
             <?php
               if(isset($_POST['edit'])){
                      $update = mysqli_query($konek,"UPDATE data_barang SET nama_barang='".$_POST['nama_barang']."',supplier='".$_POST['supplier']."',harga='".$_POST['harga']."',satuan='".$_POST['satuan']."',stok='".$_POST['stok']."',keterangan='".$_POST['keterangan']."' WHERE kode_barang='".$_GET['kode_barang']."'");
                      if($update){
-                            echo "Data Telah Diupdate";
+                           echo "<script>alert('Data Telah Diupdate')</script>";
+                           echo "<meta http-equiv='refresh' content='1 url=beranda.php'>";
+
                      }else{
-                            echo "Data Belum Disimpan";
+                           echo "Data Belum Disimpan";
+                           echo "<meta http-equiv='refresh' content='1 url=beranda.php'>";
                      }
               }
             ?>

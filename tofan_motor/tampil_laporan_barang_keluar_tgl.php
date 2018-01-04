@@ -11,8 +11,8 @@
 </head>
 <body>
 <h1 align="center">TOKO TOFAN MOTOR</h1>
-<h4 align="center">JL.Raya Bangkir no 10 Indramayu</h4>
-<H2>Laporan Barang Keluar</H2>
+<h4 align="center">JL.Raya Arahan Indramayu</h4>
+<H2 align="center">Laporan Barang Keluar</H2>
 <table border="1" align="center">
     <tr>
     <th>TANGGAL</th>

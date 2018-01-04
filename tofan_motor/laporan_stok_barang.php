@@ -120,7 +120,7 @@
 			<h2 class="judul">LAPORAN STOK BARANG</h2>
 			<form method="post" action="lapakhirbarang.php">
             <label>
-                <input id="semua" type="radio" name="laporan" value="semua">Semua Data</input>
+                <input id="semua" type="radio" name="laporan" value="semua" checked>Semua Data</input>
             </label><br>
             <label>
                 <input  id="tgl" type="radio" name="laporan" value="tgl">Tanggal</input>

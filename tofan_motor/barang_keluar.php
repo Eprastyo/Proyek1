@@ -128,45 +128,44 @@
             <div class="table-responsive">
             <table id="ngoding" class="table table-striped table-bordered" cellspacing="0" width="100%" style="font-size: 13px">
                 <thead>
-                <tr>
-                <th>Nama Barang</th>
-                <th>Tanggal</th>
-                <th>Jumlah</th>
-                <th>Harga</th>
-                <th>Total Harga</th>
-                <th>Aksi</th>
-                </tr>
+                    <tr>
+                    <th>Nama Barang</th>
+                    <th>Tanggal</th>
+                    <th>Jumlah</th>
+                    <th>Harga</th>
+                    <th>Total Harga</th>
+                    <th>Aksi</th>
+                    </tr>
                 </thead>
                 <tfoot>
-                <tr>
-                <th>Nama Barang</th>
-                <th>Tanggal</th>
-                <th>Jumlah</th>
-                <th>Harga</th>
-                <th>Total Harga</th>
-                <th>Aksi</th>
-                </tr>
+                    <tr>
+                    <th>Nama Barang</th>
+                    <th>Tanggal</th>
+                    <th>Jumlah</th>
+                    <th>Harga</th>
+                    <th>Total Harga</th>
+                    <th>Aksi</th>
+                    </tr>
                 </tfoot>
                 <tbody>
-                <?php
-                include 'koneksi.php';
-                $sql = mysqli_query($konek, "SELECT * from data_barang_keluar");
-                while ($data = mysqli_fetch_array($sql)){
-                ?>
-                <tr>
-                    <td><?php echo $data['nama_barang'];?></td>
-                    <td><?php echo $data['tgl_keluar'];?></td>
-                    <td><?php echo $data['jumlah'];?></td>
-                    <td><?php echo $data['harga'];?></td>
-                    <td><?php echo $data['total_harga'];?></td>
-                    <td>
-                        <a href="edit-barang-keluar.php?nama_barang=<?=$data['nama_barang']?>"><button class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span>Edit</button></a>
-                        <a href="delete-barang-keluar.php?nama_barang=<?=$data['nama_barang']?>"onclick="return confirm('Yakin akan dihapus ?');"><button class="btn btn-warning"><span class="glyphicon glyphicon-trash"></span>Hapus</button></a>
-                    </td>
-                </tr>
-                <?php
-                }
-                ?>
+                    <?php
+                    include 'koneksi.php';
+                    $sql = mysqli_query($konek, "SELECT * from data_barang_keluar");
+                    while ($data = mysqli_fetch_array($sql)){
+                    ?>
+                    <tr>
+                        <td><?php echo $data['nama_barang'];?></td>
+                        <td><?php echo $data['tgl_keluar'];?></td>
+                        <td><?php echo $data['jumlah'];?></td>
+                        <td><?php echo $data['harga'];?></td>
+                        <td><?php echo $data['total_harga'];?></td>
+                        <td>
+                            <a href="delete-barang-keluar.php?nama_barang=<?=$data['nama_barang']?>"onclick="return confirm('Yakin akan dihapus ?');"><button class="btn btn-warning"><span class="glyphicon glyphicon-trash"></span>Hapus</button></a>
+                        </td>
+                    </tr>
+                    <?php
+                    }
+                    ?>
                 </tbody>
             </table>
             </div>

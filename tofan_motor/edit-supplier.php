@@ -1,4 +1,4 @@
- <?php
+<?php
         session_start();
         if (empty($_SESSION['username']))
                 {
@@ -126,7 +126,7 @@
             ?> 
             <div class="well">
             <h2 class="judul">TAMBAH BARANG BARU</h2>
-            <form action="simpan-supplier.php" method="POST" enctype="multipart/form-data">
+            <form action="" method="POST" enctype="multipart/form-data">
                 <div class="row">
                     <div class="col-md-2">
                         Kode Supplier
@@ -152,15 +152,17 @@
                     </div>
                 </div>       
                 <a onclick="goBack()" class="btn btn-warning">Batal</a>
-                <input type="submit" value="Simpan" class="btn btn-warning"></input>
+                <input type="submit" value="Edit" name="edit" class="btn btn-warning"></input>
             </form>
             <?php
               if(isset($_POST['edit'])){
                      $update = mysqli_query($konek,"UPDATE data_supplier SET nama_supplier='".$_POST['nama_supplier']."',kontak='".$_POST['kontak']."' WHERE kode_supplier='".$_GET['kode_supplier']."'");
                      if($update){
-                            echo "Data Telah Diupdate";
+                            echo "<script>alert('Data Telah Diupdate')</script>";
+                            header('location:data_supplier.php');
                      }else{
-                            echo "Data Belum Disimpan";
+                           echo "<script>alert('Data Belum Disimpan')</script>";
+                           header('location:data_supplier.php');
                      }
               }
             ?>
