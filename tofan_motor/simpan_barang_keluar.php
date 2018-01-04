@@ -4,9 +4,14 @@
 	    $jumlah			= $_POST['jumlah'];
 	    $harga			= $_POST['harga'];
 		$tanggal		= date("Y-m-d");
+		
+		if($jumlah	==''|| $harga==''||$jumlah>$data['stok']){
+			$total = 0;
+			echo "<script>alert('MAAF STOK BARANG KURANG')</script>";
+        	echo "<meta http-equiv='refresh' content='1 url=input_barang_keluar.php'>"; 
+		}else{
 		$total 			= $jumlah*$harga;
-		intval($total);
-
+		}
 
 		$sql 			= mysqli_query($konek, "SELECT * FROM data_barang_keluar where nama_barang='$nama_barang'");
         $data 			= mysqli_fetch_array($sql);
