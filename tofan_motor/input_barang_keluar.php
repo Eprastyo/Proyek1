@@ -27,7 +27,7 @@
                         <div class="col-md-10 inpt">
                             <input type="text" name="harga" id="harga"/>
                             <script type="text/javascript">
-                            <?php echo $jsArray; ?>
+                            <?php echo $jsArray;?> 
                             </script>
                         </div>
                     </div>

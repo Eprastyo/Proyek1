@@ -9,7 +9,7 @@
 		$keterangan				= $_POST['keterangan'];
 		$nama_file   			= $_FILES['gambar_barang']['name'];
 		$namafolder				= "gambar/$nama_file";
-		$cek = mysqli_num_rows(mysqli_query($konek,"SELECT * FROM data_barang WHERE kode_barang='$kode_barang'"));
+		$cek 					= mysqli_num_rows(mysqli_query($konek,"SELECT * FROM data_barang WHERE kode_barang='$kode_barang'"));
 		$tanggal				= date("Y-m-d");
 
         if($cek>0){
